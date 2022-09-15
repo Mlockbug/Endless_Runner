@@ -9,8 +9,11 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
     bool isOnGround = false;
     float movementValueX;
-    public float moveSpeed = 5f;
-    public float jumpForce = 10f; 
+    public float nonSprintSpeed = 5f;
+    public float sprintSpeed = 10f;
+    float moveSpeed;
+    public float jumpForce = 10f;
+    bool doubleJump = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +23,34 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && isOnGround)
         {
-            moveSpeed = 20f;
-            Debug.Log("E");
+            moveSpeed = sprintSpeed;
+            //Debug.Log(moveSpeed);
         }
         else
         {
-            moveSpeed = 5f;
+            moveSpeed = nonSprintSpeed;
+            //Debug.Log(moveSpeed);
         }
         movementValueX = Input.GetAxis("Horizontal");
-        isOnGround = Physics2D.OverlapCircle(groundCheck.transform.position, 0f, whatIsGround);
-        rb.velocity = new Vector2(movementValueX * moveSpeed, rb.velocity.y);
+        isOnGround = Physics2D.OverlapCircle(groundCheck.transform.position, 0.1f, whatIsGround);
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
+            doubleJump = true;
+            movementValueX = 0f;
         }
+        else if (Input.GetKeyDown(KeyCode.Space) && doubleJump)
+        {
+            rb.AddForce(new Vector2(0f, jumpForce));
+            doubleJump = false;
+            movementValueX = 0f;
+        }
+        else if (isOnGround)
+        {
+            doubleJump = true;
+        }
+        rb.velocity = new Vector2(movementValueX * moveSpeed, rb.velocity.y);
     }
 }

@@ -494,5 +494,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  moveSpeed: 5
+  nonSprintSpeed: 5
+  sprintSpeed: 10
   jumpForce: 250
