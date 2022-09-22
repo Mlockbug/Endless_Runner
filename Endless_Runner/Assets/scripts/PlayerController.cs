@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && isOnGround)
+       /* (Input.GetKey(KeyCode.LeftShift) && isOnGround)
         {
             moveSpeed = sprintSpeed;
             //Debug.Log(moveSpeed);
@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = nonSprintSpeed;
             //Debug.Log(moveSpeed);
-        }
-        movementValueX = Input.GetAxis("Horizontal");
+        }*/
+        movementValueX = 1f;
         isOnGround = Physics2D.OverlapCircle(groundCheck.transform.position, 0.1f, whatIsGround);
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
