@@ -17,13 +17,14 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        moveSpeed = nonSprintSpeed;
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       /* (Input.GetKey(KeyCode.LeftShift) && isOnGround)
+        /*if (Input.GetKey(KeyCode.LeftShift) && isOnGround)
         {
             moveSpeed = sprintSpeed;
             //Debug.Log(moveSpeed);
@@ -51,6 +52,6 @@ public class PlayerController : MonoBehaviour
         {
             doubleJump = true;
         }
-        rb.velocity = new Vector2(movementValueX * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
     }
 }

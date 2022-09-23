@@ -9,19 +9,19 @@ public class spawnerControll : MonoBehaviour
     public GameObject[] platforms;
     float p_timeToNextSpawn;
     float p_timeSinceLastSpawn = 0f;
-    public float p_minSpawnTime = 0.5f;
-    public float p_maxSpawnTime = 2f;
+    public float p_minSpawnTime = 1f;
+    public float p_maxSpawnTime = 3f;
 
     // Start is called before the first frame update
     void Start()
     {
+        Instantiate(platforms[Random.Range(0, platforms.Length)], new Vector3(transform.position.x+5f,transform.position.y,transform.position.z), Quaternion.identity);
         p_timeToNextSpawn = Random.Range(p_minSpawnTime, p_maxSpawnTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x + 10f, transform.position.y, transform.position.z);
         p_timeSinceLastSpawn += Time.deltaTime;
 
         if (p_timeSinceLastSpawn > p_timeToNextSpawn)
