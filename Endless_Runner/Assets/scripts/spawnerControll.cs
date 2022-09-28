@@ -12,6 +12,8 @@ public class spawnerControll : MonoBehaviour
     public float p_minSpawnTime = 1f;
     public float p_maxSpawnTime = 3f;
 
+    public GameObject[] pickUps;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,7 @@ public class spawnerControll : MonoBehaviour
                 newValueY = transform.position.y + offset;
             }
             Instantiate(platforms[Random.Range(0, platforms.Length)], new Vector3(transform.position.x, newValueY, transform.position.z), Quaternion.identity);
+            Instantiate(pickUps[Random.Range(0, pickUps.Length)], new Vector3(transform.position.x, newValueY + 1f, transform.position.z), Quaternion.identity);
             p_timeToNextSpawn = Random.Range(p_minSpawnTime, p_maxSpawnTime);
             p_timeSinceLastSpawn = 0f;
         }

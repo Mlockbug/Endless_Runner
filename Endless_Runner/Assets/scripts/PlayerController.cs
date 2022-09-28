@@ -36,15 +36,16 @@ public class PlayerController : MonoBehaviour
         }*/
         movementValueX = 1f;
         isOnGround = Physics2D.OverlapCircle(groundCheck.transform.position, 0.1f, whatIsGround);
+        
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
-            rb.AddForce(new Vector2(0f, jumpForce));
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             doubleJump = true;
             movementValueX = 0f;
         }
         else if (Input.GetKeyDown(KeyCode.Space) && doubleJump)
         {
-            rb.AddForce(new Vector2(0f, jumpForce));
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             doubleJump = false;
             movementValueX = 0f;
         }
@@ -53,5 +54,13 @@ public class PlayerController : MonoBehaviour
             doubleJump = true;
         }
         rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "coin")
+        {
+            //add check to type of coin
+        }
     }
 }
