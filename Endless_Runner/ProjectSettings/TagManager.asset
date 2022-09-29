@@ -8,6 +8,7 @@ TagManager:
   - bronze
   - silver
   - gold
+  - StartGround
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - ground
   - coin
-  - 
+  - shuriken
   - 
   - 
   - 

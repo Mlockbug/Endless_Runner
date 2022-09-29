@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public Text scoreText;
+    int score = 0;
     Rigidbody2D rb;
     public GameObject groundCheck;
     public LayerMask whatIsGround;
@@ -58,9 +61,23 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (LayerMask.LayerToName(collision.gameObject.layer) == "coin")
+        switch (collision.tag)
         {
-            //add check to type of coin
+            case "bronze":
+                score += 1;
+                scoreText.text = "Score: " + score.ToString();
+                break;
+            case "silver":
+                score += 3;
+                scoreText.text = "Score: " + score.ToString();
+                break;
+            case "gold":
+                score += 5;
+                scoreText.text = "Score: " + score.ToString();
+                break;
+            default:
+                break;
         }
+        Destroy(collision.gameObject);
     }
 }

@@ -14,10 +14,12 @@ public class spawnerControll : MonoBehaviour
 
     public GameObject[] pickUps;
 
+    public GameObject shuriken;
+
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(platforms[Random.Range(0, platforms.Length)], new Vector3(transform.position.x+5f,transform.position.y,transform.position.z), Quaternion.identity);
+        //Instantiate(platforms[Random.Range(0, platforms.Length)], new Vector3(transform.position.x+5f,transform.position.y,transform.position.z), Quaternion.identity);
         p_timeToNextSpawn = Random.Range(p_minSpawnTime, p_maxSpawnTime);
     }
 
@@ -39,6 +41,11 @@ public class spawnerControll : MonoBehaviour
             Instantiate(pickUps[Random.Range(0, pickUps.Length)], new Vector3(transform.position.x, newValueY + 1f, transform.position.z), Quaternion.identity);
             p_timeToNextSpawn = Random.Range(p_minSpawnTime, p_maxSpawnTime);
             p_timeSinceLastSpawn = 0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Instantiate(shuriken, player.transform.position, Quaternion.identity);
         }
     }
 }
