@@ -9,6 +9,9 @@ TagManager:
   - silver
   - gold
   - StartGround
+  - shuriken
+  - missile
+  - ground
   layers:
   - Default
   - TransparentFX

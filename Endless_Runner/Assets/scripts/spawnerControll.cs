@@ -15,6 +15,10 @@ public class spawnerControll : MonoBehaviour
     public GameObject[] pickUps;
 
     public GameObject shuriken;
+    float cooldown = 0;
+
+    public GameObject missile;
+    public GameObject missileSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +31,7 @@ public class spawnerControll : MonoBehaviour
     void Update()
     {
         p_timeSinceLastSpawn += Time.deltaTime;
-
+        cooldown -= Time.deltaTime;
         if (p_timeSinceLastSpawn > p_timeToNextSpawn)
         {
             float offset = Random.Range(-2f, 2f);
@@ -43,9 +47,10 @@ public class spawnerControll : MonoBehaviour
             p_timeSinceLastSpawn = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && cooldown <= 0)
         {
             Instantiate(shuriken, player.transform.position, Quaternion.identity);
+            cooldown = 3f;
         }
     }
 }

@@ -28,7 +28,7 @@ public class shuriken : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (LayerMask.LayerToName(collision.gameObject.layer) == "ground")
+        if (collision.gameObject.tag == "ground")
         {
             Destroy(gameObject);
         }
