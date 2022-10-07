@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     float moveSpeed;
     public float jumpForce = 10f;
     bool doubleJump = true;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
+            anim.SetBool("jumping", true);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             doubleJump = true;
             movementValueX = 0f;
@@ -54,6 +56,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (isOnGround)
         {
+            anim.SetBool("jumping", false);
             doubleJump = true;
         }
         rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
