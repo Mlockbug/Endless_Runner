@@ -41,31 +41,41 @@ public class PlayerController : MonoBehaviour
         movementValueX = 1f;
         isOnGround = Physics2D.OverlapCircle(groundCheck.transform.position, 0f, whatIsGround);
 
-        anim.SetFloat("Falling", rb.velocity.y);
+        if (rb.velocity.y == 0)
+        {
+            anim.SetBool("OnGround", true);
+        }
+        else
+        {
+            anim.SetBool("OnGround", false);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
-            anim.SetBool("Jumping", true);
-            anim.SetBool("secondJump", false);
+            anim.SetTrigger("Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             doubleJump = true;
             movementValueX = 0f;
         }
         else if (Input.GetKeyDown(KeyCode.Space) && doubleJump)
         {
-            anim.SetBool("secondJump", true);
-            anim.SetBool("Jumping", false);
+            anim.SetTrigger("SecondJump");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             doubleJump = false;
             movementValueX = 0f;
         }
         else if (isOnGround)
         {
-            anim.SetBool("Jumping", false);
-            anim.SetBool("secondJump", false);
+            Debug.Log("E");
             doubleJump = true;
         }
+        else if (isOnGround)
+        {
+            anim.ResetTrigger("Jump");
+            anim.ResetTrigger("SecondJump");
+        }
         rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+        anim.SetFloat("Falling", rb.velocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
