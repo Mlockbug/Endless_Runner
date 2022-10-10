@@ -20,6 +20,10 @@ public class spawnerControll : MonoBehaviour
 
     public GameObject missile;
     public GameObject missileSpawn;
+    float m_timeToNextSpawn;
+    float m_timeSinceLastSpawn = 0f;
+    public float m_minSpawnTime = 1f;
+    public float m_maxSpawnTime = 2f;
 
     public Text shurikenTimer;
 
@@ -28,12 +32,14 @@ public class spawnerControll : MonoBehaviour
     {
         //Instantiate(platforms[Random.Range(0, platforms.Length)], new Vector3(transform.position.x+5f,transform.position.y,transform.position.z), Quaternion.identity);
         p_timeToNextSpawn = Random.Range(p_minSpawnTime, p_maxSpawnTime);
+        m_timeToNextSpawn = Random.Range(m_minSpawnTime, m_maxSpawnTime);
     }
 
     // Update is called once per frame
     void Update()
     {
         p_timeSinceLastSpawn += Time.deltaTime;
+        m_timeSinceLastSpawn += Time.deltaTime;
         cooldown -= Time.deltaTime;
         if (p_timeSinceLastSpawn > p_timeToNextSpawn)
         {
@@ -48,6 +54,21 @@ public class spawnerControll : MonoBehaviour
             Instantiate(pickUps[Random.Range(0, pickUps.Length)], new Vector3(transform.position.x, newValueY + 1f, transform.position.z), Quaternion.identity);
             p_timeToNextSpawn = Random.Range(p_minSpawnTime, p_maxSpawnTime);
             p_timeSinceLastSpawn = 0f;
+        }
+
+        if (m_timeSinceLastSpawn > m_timeToNextSpawn)
+		{
+            float offset = Random.Range(-2f, 2f);
+            float newValueY = missileSpawn.transform.position.y + offset;
+            while (newValueY < -4f || newValueY > 3f)
+            {
+                offset = Random.Range(-2f, 2f);
+                newValueY = missileSpawn.transform.position.y + offset;
+            }
+            missileSpawn.transform.position = new Vector3(missileSpawn.transform.position.x, missileSpawn.transform.position.y + newValueY, missileSpawn.transform.position.z);
+            Instantiate(missile, missileSpawn.transform.position, Quaternion.identity);
+            m_timeToNextSpawn = Random.Range(m_minSpawnTime, m_maxSpawnTime);
+            m_timeSinceLastSpawn = 0f;
         }
 
         if (Input.GetKeyDown(KeyCode.E) && cooldown <= 0)
