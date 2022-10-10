@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class spawnerControll : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class spawnerControll : MonoBehaviour
 
     public GameObject missile;
     public GameObject missileSpawn;
+
+    public Text shurikenTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +54,23 @@ public class spawnerControll : MonoBehaviour
         {
             Instantiate(shuriken, player.transform.position, Quaternion.identity);
             cooldown = 3f;
+        }
+        
+        if (cooldown<=0)
+        {
+            shurikenTimer.text = "0";
+        }
+        else if (cooldown <= 1)
+        {
+            shurikenTimer.text = "1";
+        }
+        else if (cooldown <= 2)
+        {
+            shurikenTimer.text = "2";
+        }
+        else if (cooldown <= 3)
+        {
+            shurikenTimer.text = "3";
         }
     }
 }
