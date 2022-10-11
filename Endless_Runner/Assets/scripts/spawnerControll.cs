@@ -73,7 +73,7 @@ public class spawnerControll : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && cooldown <= 0)
         {
-            Instantiate(shuriken, player.transform.position, Quaternion.identity);
+            Instantiate(shuriken, new Vector3(player.transform.position.x+0.5f, player.transform.position.y, player.transform.position.z), Quaternion.identity);
             cooldown = 3f;
         }
         

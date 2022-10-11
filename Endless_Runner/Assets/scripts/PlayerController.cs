@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     bool doubleJump = true;
     public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (isOnGround)
         {
-            Debug.Log("E");
+            //Debug.Log("E");
             doubleJump = true;
         }
         else if (isOnGround)
@@ -100,7 +101,8 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.gameObject);
                 break;
             case "death":
-
+                death();
+                break;
             default:
                 break;
         }
@@ -114,7 +116,9 @@ public class PlayerController : MonoBehaviour
     }
     public void death()
     {
+        Debug.Log("R");
         gameUi.SetActive(false);
         deathScreen.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

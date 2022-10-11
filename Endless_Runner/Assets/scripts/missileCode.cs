@@ -7,16 +7,16 @@ public class missileCode : MonoBehaviour
 
     public Rigidbody2D missile;
     GameObject player;
-    GameObject gameUi;
-    GameObject deathScreen;
+    //GameObject gameUi;
+    //GameObject deathScreen;
     private bool alive = false;
     
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
-        gameUi = GameObject.Find("main game ui");
-        deathScreen = GameObject.Find("death screen");
+        //gameUi = GameObject.Find("main game ui");
+        //deathScreen = GameObject.Find("death screen");
     }
 
     // Update is called once per frame
@@ -46,15 +46,15 @@ public class missileCode : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case "Player":
+                player.GetComponent<PlayerController>().death();
                 Destroy(gameObject);
-                death();
                 break;
         }
     }
 
-    public void death()
+    /*public void death()
 	{
         gameUi.SetActive(false);
         deathScreen.SetActive(true);
-    }
+    }*/
 }

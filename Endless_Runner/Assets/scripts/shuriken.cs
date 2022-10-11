@@ -18,7 +18,7 @@ public class shuriken : MonoBehaviour
         if (alive)
         {
             rb.velocity = new Vector2(10f, 0f);
-            rb.rotation -= 1.0f;
+            rb.rotation -= 15.0f;
         }
     }
 

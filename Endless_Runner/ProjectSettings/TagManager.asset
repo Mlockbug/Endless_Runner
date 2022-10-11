@@ -13,6 +13,7 @@ TagManager:
   - missile
   - ground
   - destroyer
+  - death
   layers:
   - Default
   - TransparentFX
