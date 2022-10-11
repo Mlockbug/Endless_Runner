@@ -12,6 +12,7 @@ TagManager:
   - shuriken
   - missile
   - ground
+  - destroyer
   layers:
   - Default
   - TransparentFX

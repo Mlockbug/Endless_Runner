@@ -85,18 +85,27 @@ public class PlayerController : MonoBehaviour
             case "bronze":
                 score += 1;
                 scoreText.text = "Score: " + score.ToString();
+                Destroy(collision.gameObject);
                 break;
             case "silver":
                 score += 3;
                 scoreText.text = "Score: " + score.ToString();
+                Destroy(collision.gameObject);
                 break;
             case "gold":
                 score += 5;
                 scoreText.text = "Score: " + score.ToString();
+                Destroy(collision.gameObject);
                 break;
             default:
                 break;
         }
         Destroy(collision.gameObject);
+    }
+
+    public void scoreMissile()
+    {
+        score += 10;
+        scoreText.text = "Score: " + score.ToString();
     }
 }

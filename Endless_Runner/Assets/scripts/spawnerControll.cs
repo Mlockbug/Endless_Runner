@@ -65,7 +65,7 @@ public class spawnerControll : MonoBehaviour
                 offset = Random.Range(-2f, 2f);
                 newValueY = missileSpawn.transform.position.y + offset;
             }
-            missileSpawn.transform.position = new Vector3(missileSpawn.transform.position.x, missileSpawn.transform.position.y + newValueY, missileSpawn.transform.position.z);
+            missileSpawn.transform.position = new Vector3(missileSpawn.transform.position.x, newValueY, missileSpawn.transform.position.z);
             Instantiate(missile, missileSpawn.transform.position, Quaternion.identity);
             m_timeToNextSpawn = Random.Range(m_minSpawnTime, m_maxSpawnTime);
             m_timeSinceLastSpawn = 0f;
