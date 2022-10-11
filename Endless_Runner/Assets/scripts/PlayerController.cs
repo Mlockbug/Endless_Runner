@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject gameUi;
+    public GameObject deathScreen; 
     public Text scoreText;
     int score = 0;
     Rigidbody2D rb;
@@ -97,6 +99,8 @@ public class PlayerController : MonoBehaviour
                 scoreText.text = "Score: " + score.ToString();
                 Destroy(collision.gameObject);
                 break;
+            case "death":
+
             default:
                 break;
         }
@@ -107,5 +111,10 @@ public class PlayerController : MonoBehaviour
     {
         score += 10;
         scoreText.text = "Score: " + score.ToString();
+    }
+    public void death()
+    {
+        gameUi.SetActive(false);
+        deathScreen.SetActive(true);
     }
 }
