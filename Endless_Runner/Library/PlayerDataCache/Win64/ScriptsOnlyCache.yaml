@@ -27,15 +27,12 @@ ScriptsOnlyBuild:
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.Timeline.Editor.dll:
-    - TimelinePreferences
     - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -95,37 +92,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1558}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 1664}
+      Script: {instanceID: 1668}
     - Class: 114
-      Script: {instanceID: 2286}
+      Script: {instanceID: 2290}
     - Class: 114
-      Script: {instanceID: 2460}
+      Script: {instanceID: 2464}
     - Class: 114
-      Script: {instanceID: 2710}
+      Script: {instanceID: 2714}
     - Class: 114
-      Script: {instanceID: 2882}
-    - Class: 114
-      Script: {instanceID: 3114}
+      Script: {instanceID: 2886}
     - Class: 114
       Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 3364}
+      Script: {instanceID: 3122}
     - Class: 114
-      Script: {instanceID: 3482}
+      Script: {instanceID: 3368}
     - Class: 114
-      Script: {instanceID: 4084}
+      Script: {instanceID: 3486}
     - Class: 114
-      Script: {instanceID: 4194}
+      Script: {instanceID: 4088}
     - Class: 114
-      Script: {instanceID: 4362}
+      Script: {instanceID: 4198}
     - Class: 114
-      Script: {instanceID: 4888}
+      Script: {instanceID: 4366}
     - Class: 114
-      Script: {instanceID: 5266}
+      Script: {instanceID: 4892}
     - Class: 114
-      Script: {instanceID: 5818}
+      Script: {instanceID: 5270}
+    - Class: 114
+      Script: {instanceID: 5822}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -158,19 +155,19 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1558}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 2710}
+      Script: {instanceID: 2714}
     - Class: 114
-      Script: {instanceID: 2882}
+      Script: {instanceID: 2886}
     - Class: 114
-      Script: {instanceID: 3114}
+      Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 3364}
+      Script: {instanceID: 3368}
     - Class: 114
-      Script: {instanceID: 3482}
+      Script: {instanceID: 3486}
     - Class: 114
-      Script: {instanceID: 4362}
+      Script: {instanceID: 4366}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -748,4 +745,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/main menu.unity
   - Assets/Scenes/main game.unity
-  playerPath: C:/Users/energ/Documents/My Games/Endless runner/Endless Runner.exe
+  playerPath: //school.lan/filestore/UserData/Students/Intake2022/pstevens2022/Documents/My
+    Games/Endless runner/Endless Runner.exe
