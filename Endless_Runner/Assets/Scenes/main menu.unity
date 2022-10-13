@@ -207,7 +207,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 369365415}
         m_TargetAssemblyTypeName: menulogic, Assembly-CSharp
-        m_MethodName: close
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -576,7 +576,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 369365415}
         m_TargetAssemblyTypeName: menulogic, Assembly-CSharp
-        m_MethodName: startGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

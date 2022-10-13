@@ -26,13 +26,13 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    Unity.Timeline.Editor.dll:
-    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -92,37 +92,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1562}
+      Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 1668}
+      Script: {instanceID: 1630}
     - Class: 114
-      Script: {instanceID: 2290}
+      Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2464}
+      Script: {instanceID: 2426}
     - Class: 114
-      Script: {instanceID: 2714}
+      Script: {instanceID: 2676}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2848}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 3080}
     - Class: 114
-      Script: {instanceID: 3122}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3368}
+      Script: {instanceID: 3330}
     - Class: 114
-      Script: {instanceID: 3486}
+      Script: {instanceID: 3448}
     - Class: 114
-      Script: {instanceID: 4088}
+      Script: {instanceID: 4050}
     - Class: 114
-      Script: {instanceID: 4198}
+      Script: {instanceID: 4160}
     - Class: 114
-      Script: {instanceID: 4366}
+      Script: {instanceID: 4328}
     - Class: 114
-      Script: {instanceID: 4892}
+      Script: {instanceID: 4854}
     - Class: 114
-      Script: {instanceID: 5270}
+      Script: {instanceID: 5232}
     - Class: 114
-      Script: {instanceID: 5822}
+      Script: {instanceID: 5784}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -155,19 +155,19 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1562}
+      Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 2714}
+      Script: {instanceID: 2676}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2848}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 3080}
     - Class: 114
-      Script: {instanceID: 3368}
+      Script: {instanceID: 3330}
     - Class: 114
-      Script: {instanceID: 3486}
+      Script: {instanceID: 3448}
     - Class: 114
-      Script: {instanceID: 4366}
+      Script: {instanceID: 4328}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157

@@ -41,12 +41,12 @@ public class missileCode : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case "shuriken":
-                player.GetComponent<PlayerController>().scoreMissile();
+                player.GetComponent<PlayerController>().ScoreMissile();
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
                 break;
             case "Player":
-                player.GetComponent<PlayerController>().death();
+                player.GetComponent<PlayerController>().Death();
                 Destroy(gameObject);
                 break;
         }

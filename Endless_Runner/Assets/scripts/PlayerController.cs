@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.gameObject);
                 break;
             case "death":
-                death();
+                Death();
                 break;
             default:
                 break;
@@ -109,13 +109,14 @@ public class PlayerController : MonoBehaviour
         Destroy(collision.gameObject);
     }
 
-    public void scoreMissile()
+    public void ScoreMissile()
     {
         score += 10;
         scoreText.text = "Score: " + score.ToString();
     }
-    public void death()
+    public void Death()
     {
+        GameObject.Find("spawnerController").GetComponent<spawnerControll>().Dead();
         Debug.Log("R");
         gameUi.SetActive(false);
         deathScreen.SetActive(true);

@@ -17,12 +17,12 @@ public class menulogic : MonoBehaviour
         
     }
 
-    public void close()
+    public void Close()
     {
         Application.Quit();
     }
 
-    public void startGame()
+    public void StartGame()
     {
         SceneManager.LoadScene(1);
     }
